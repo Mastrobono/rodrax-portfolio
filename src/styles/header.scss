@@ -1,0 +1,36 @@
+@import 'variables.scss';
+
+.header {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 32px);
+    width: 100%;
+    background-color: $primary;
+    border-radius: 10px;
+
+    &__logo {
+        object-fit: cover;
+        width: 200px;
+        height: 65px;
+    }
+
+    &__subtitle {
+        font-family: 'NeueHaasDisplay-Roman';
+        color: $secondary;
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    &__arrow--down {
+        margin-top: 16px;
+        color: $secondary;
+
+        &:hover {
+            background-color: transparent;
+        }
+
+    }
+}

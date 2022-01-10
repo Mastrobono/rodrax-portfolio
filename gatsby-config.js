@@ -15,6 +15,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     `gatsby-plugin-material-ui`,
+    "gatsby-plugin-root-import",
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
@@ -26,7 +27,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "assets/icon.jpg",
       },
     },
     "gatsby-plugin-sharp",
@@ -35,9 +36,16 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: "./assets",
       },
       __key: "images",
+    },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./asset/`,
+      },
     },
   ],
 };

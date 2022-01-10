@@ -1,0 +1,95 @@
+[
+    {
+        "title": "¿Qué es la fotografía?",
+        "subtitle": "Es una de las maneras de transmitir un pensamiento artístico a partir de una cámara de fotos.",
+        "content": [
+            {
+                "type": "img",
+                "name": "Urbano",
+                "path": "./assets/fotografia/urbano.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Producto",
+                "path": "./assets/fotografia/producto.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Lifestyle",
+                "path": "./assets/fotografia/lifestyle.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Gastronomia",
+                "path": "./assets/fotografia/gastronomia.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Eventos",
+                "path": "./assets/fotografia/eventos.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Estudio",
+                "path": "./assets/fotografia/estudio.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Books",
+                "path": "./assets/fotografia/books.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Automoviles",
+                "path": "./assets/fotografia/automoviles.jpg"
+            }
+        ]
+    },
+    {
+        "title": "Desde el concepto del diseño",
+        "subtitle": "Es capaz de llegar a grandes cosas",
+        "content": [
+            {
+                "type": "img",
+                "name": "Animación",
+                "path": "assets/Diseño/Animacion.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Logotipo",
+                "path": "assets/Diseño/Logotipo.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Mockups",
+                "path": "assets/Diseño/mockups.jpg"
+            },
+            {
+                "type": "img",
+                "name": "Portadas",
+                "path": "assets/Diseño/portadas.jpg"
+            }
+        ]
+    },
+    {
+        "title": "Gracias al contenido visual",
+        "subtitle": "es posible transmitir y contar una historia.",
+        "content": [
+            {
+                "type": "video",
+                "name": "Eventos",
+                "path": "youtube.link"
+            },
+            {
+                "type": "video",
+                "name": "Institucionales",
+                "path": "youtube.link"
+            },
+            {
+                "type": "video",
+                "name": "Redes",
+                "path": "youtube.link"
+            }
+        ]
+    }
+]
