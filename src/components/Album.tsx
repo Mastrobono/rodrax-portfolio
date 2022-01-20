@@ -43,8 +43,8 @@ const RenderAlbums = ({ imageData, images, state }: {imageData: INodeData, image
     return (
         <>
             {<>
-                <RenderSlide isFirstPosition={true} state={state} imageData={imageData} images={images} />;
-                <RenderSlide isFirstPosition={false} state={!state} imageData={imageData} images={images} />;
+                <RenderSlide isFirstPosition={true} state={state} imageData={imageData} images={images} />
+                <RenderSlide isFirstPosition={false} state={!state} imageData={imageData} images={images} />
             </>
             }
         </>
