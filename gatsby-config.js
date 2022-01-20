@@ -30,21 +30,21 @@ module.exports = {
         icon: "assets/icon.jpg",
       },
     },
+    `gatsby-transformer-json`,
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./assets",
+        name: "data",
+        path: "./assets/data",
       },
-      __key: "images",
     },
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./asset/`,
+        name: `content`,
+        path: `./src/gatsby-images`,
       },
     },
   ],

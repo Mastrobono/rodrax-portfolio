@@ -1,61 +1,96 @@
-import React from 'react';
-import { Container, Grid, Typography } from '@material-ui/core';
-import TextCard from './TextCard';
+import React, { useState, useEffect } from 'react';
+import { Grid, Typography, Slide, Button, Box, Modal } from '@material-ui/core';
 import '../styles/album.scss';
-import { useStaticQuery, graphql } from 'gatsby';
-interface Props {
-    album: IGroup;
-}
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Gallery from "./Gallery";
+import { INodeData, IImagesQuery, IContent, IEdgeImages} from "./Albums";
+
+const RenderAlbumsContent = ({ content, images } : {content: IContent[], images: IImagesQuery}) => (
+    content.map((imageData) => {
+        const imageIndex = images.edges.findIndex(image => image.node.name === imageData.path);
+        const imageSrc = getImage(images.edges[imageIndex].node)
+        return (
+
+            <Grid item xs={6} className="photo-container">
+                <GatsbyImage className="photo-container__img" image={imageSrc} alt="img" />
+                <Box className="photo-container__text-container">
+                    <Typography className="photo-container__text">{imageData.name}</Typography>
+                </Box>
+            </Grid>
+        )
+    })
+)
 
 
-
-const AlbumPhotography = ({ album }: Props) => {
-
-    const data = useStaticQuery(graphql`
-    query project{
-      AllAlbums {
-        edges {
-          node{
-              title,
-              subtitle,
-              content
-          }
-        }
-      }
+const RenderSlide = ({ isFirstPosition, state, imageData, images } : {isFirstPosition: boolean, state: boolean, imageData: INodeData, images: IImagesQuery}) => {
+    const { content } = imageData;
+    const slicedContent = isFirstPosition ? content.slice(0, 4) : content.slice(4, 8);
+    const props = {
+        in: state ? true : false,
+        direction: isFirstPosition ? "right" : "left",
+        unmountOnExit: isFirstPosition ? false : true,
+        style: state ? { 'timeout': 500 } : {}
     }
-  `
-    );
-
-
-    console.log(data)
-    debugger;
-    const Content = () => <>{
-        album.content.map((item) => {
-            if (item.type == 'img') {
-                return <img src="" />;
-            } else {
-                return <h1>test</h1>;
-            }
-        })
-    }</>;
-
     return (
-        <Container className="album-section" maxWidth={false}>
-            <Grid container xs={12}>
-                <Typography variant="h1" className="card__title">
-                    {album.title}
-                </Typography>
+        <Slide {...props} >
+            <Grid className={`album__slider album__slider--${isFirstPosition ? 0 : 1}`} container xs={12}>
+                <RenderAlbumsContent content={slicedContent} images={images} />
             </Grid>
-            <Grid container xs={12}>
-                <Typography variant="subtitle1" className="card__subtitle">
-                    {album.subtitle}
-                </Typography>
-            </Grid>
-            <Grid className="album album--photography">
-                <Content />
-            </Grid>
-        </Container >
+        </Slide>
     )
 }
 
-export default AlbumPhotography;
+const RenderAlbums = ({ imageData, images, state }: {imageData: INodeData, images: IImagesQuery, state: boolean}) => {
+    return (
+        <>
+            {<>
+                <RenderSlide isFirstPosition={true} state={state} imageData={imageData} images={images} />;
+                <RenderSlide isFirstPosition={false} state={!state} imageData={imageData} images={images} />;
+            </>
+            }
+        </>
+
+    )
+
+}
+
+interface Props {
+    data: INodeData;
+    images: IImagesQuery;
+}
+
+const Album = ({ data, images }: Props) => {
+
+    const [checked, setChecked] = useState(true);
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const handleChange = () => {
+        setChecked((prev: boolean) => !prev);
+    };
+
+    return (
+        <Grid className={`album bg--${data.bgColor}`} container >
+            <Grid item xs={12} direction="column" className="album__texts-container">
+                <Typography className="title-2" align="center">{data.title}</Typography>
+                <Typography className="subtitle-2" align="center">{data.subtitle}</Typography>
+            </Grid>
+            <Grid item xs={12} style={{ position: "relative" }}>
+                <RenderAlbums imageData={data} images={images} state={checked} />
+            </Grid>
+            <Button onClick={handleOpen}>Open modal</Button>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                className="modal"
+            >
+                <Gallery />
+            </Modal>
+        </Grid >
+    )
+}
+
+export default Album;

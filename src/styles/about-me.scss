@@ -34,7 +34,9 @@
 
         &:hover {
             border: 2px solid $primary;
-            background-color: #4e4f5733;
+            color:$secondary;
+            background-color: $primary;
+            transition: 0.5s;
         }
     }
 

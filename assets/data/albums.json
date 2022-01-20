@@ -1,0 +1,106 @@
+[
+    {
+        "title": "¿Qué es la fotografía?",
+        "subtitle": "Es una de las maneras de transmitir un pensamiento artístico a partir de una cámara de fotos.",
+        "content": [
+            {
+                "name": "Urbano",
+                "path": "urbano",
+                "gallery": [
+                    [
+                        {
+                            "name": "urbano-1",
+                            "path": "urbano-2"
+                        },
+                        {
+                            "name": "urbano",
+                            "path": "automoviles"
+                        }
+                    ],
+                    [
+                        {
+                            "name": "Automoviles",
+                            "path": "automoviles"
+                        },
+                        {
+                            "name": "Automoviles",
+                            "path": "automoviles"
+                        }
+                    ]
+                ]
+            },
+            {
+                "name": "Producto",
+                "path": "producto"
+            },
+            {
+                "name": "Gastronomia",
+                "path": "gastronomia"
+            },
+            {
+                "name": "Eventos",
+                "path": "eventos"
+            },
+            {
+                "name": "Estudio",
+                "path": "estudio"
+            },
+            {
+                "name": "Books",
+                "path": "books"
+            },
+            {
+                "name": "Automoviles",
+                "path": "automoviles"
+            },
+            {
+                "name": "Automoviles",
+                "path": "automoviles"
+            }
+            
+        ],
+        "bgColor": "white"
+    },
+    {
+        "title": "Desde el concepto del diseño",
+        "subtitle": "Es capaz de llegar a grandes cosas",
+        "content": [
+            {
+                "name": "Animación",
+                "path": "animacion"
+            },
+            {
+                "name": "Logotipo",
+                "path": "logotipo"
+            },
+            {
+                "name": "Mockups",
+                "path": "mockups"
+            },
+            {
+                "name": "Portadas",
+                "path": "portadas"
+            }
+        ],
+        "bgColor": "creme"
+    },
+    {
+        "title": "Gracias al contenido visual",
+        "subtitle": "es posible transmitir y contar una historia.",
+        "content": [
+            {
+                "name": "Eventos",
+                "path": "portadas"
+            },
+            {
+                "name": "Institucionales",
+                "path": "portadas"
+            },
+            {
+                "name": "Redes",
+                "path": "portadas"
+            }
+        ],
+        "bgColor": "white"
+    }
+]

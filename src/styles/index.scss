@@ -17,7 +17,7 @@ body {
     width: 100vw;
     padding: 0;
     padding: 0 16px;
-    padding-right:calc(16px + $scrollbar-width);
+    padding-right: calc(16px + $scrollbar-width);
 }
 
 html::-webkit-scrollbar-thumb {
@@ -44,4 +44,33 @@ html::-webkit-scrollbar-track-piece:end {
 html::-webkit-scrollbar-track-piece:start {
     background: transparent;
     margin-top: 10px;
+}
+
+.bg {
+    &--white {
+        background-color: #ffffff;
+
+    }
+
+    &--creme {
+        background-color: $secondary;
+
+    }
+
+    &--gray {
+        background-color: $primary;
+
+    }
+}
+
+.title-2,
+.subtitle-2 {
+    font-family: 'NeueHaasDisplay-Bold';
+    color: $primary;
+    font-size: $title-2;
+}
+
+.subtitle-2 {
+    font-family: 'NeueHaasDisplay-Roman';
+    font-size: $subtitle-1;
 }
