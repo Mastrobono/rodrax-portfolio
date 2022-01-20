@@ -1,0 +1,35 @@
+//Fonts
+@font-face {
+    font-family: 'NeueHaasDisplay-Light';
+    src: url('../../assets/fonts/NeueHaasDisplay-Light.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay-Roman';
+    src: url('../../assets/fonts/NeueHaasDisplay-Roman.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay-Medium';
+    src: url('../../assets/fonts/NeueHaasDisplay-Medium.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeueHaasDisplay-Bold';
+    src: url('../../assets/fonts/NeueHaasDisplay-Bold.ttf');
+    font-display: swap;
+}
+
+//Font Sizes
+$title-2: 20px;
+$subtitle-1: 16px;
+
+//Colors
+$primary: #4e4f57;
+$secondary: #e8d5c4;
+
+//Scrollbar
+$scrollbar-width: 10px;
