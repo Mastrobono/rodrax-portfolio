@@ -21,7 +21,6 @@ const RenderAlbumsContent = ({ content, images } : {content: IContent[], images:
     })
 )
 
-
 const RenderSlide = ({ isFirstPosition, state, imageData, images } : {isFirstPosition: boolean, state: boolean, imageData: INodeData, images: IImagesQuery}) => {
     const { content } = imageData;
     const slicedContent = isFirstPosition ? content.slice(0, 4) : content.slice(4, 8);
