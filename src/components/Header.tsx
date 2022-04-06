@@ -3,11 +3,11 @@ import { Container, Box, Typography, Link } from '@material-ui/core';
 import logo from '../../assets/logo.png';
 import '../styles/header.scss';
 
-const marginTop = 16;
+const MARGIN_TOP = 16;
 
 const scrollDown = () => {
     window.scrollTo({
-        top: document.getElementById("about-me").offsetTop - marginTop,
+        top: document.getElementById("about-me").offsetTop - MARGIN_TOP,
         behavior: 'smooth'
     });
 }

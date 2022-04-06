@@ -1,10 +1,10 @@
 type TItem = "img" | "video";
-type TColor = "white" | "creme";
+type TColor = "white" | "creme" | "gray";
 
 interface IContent {
     type: TItem;
     name: string;
-    path: string;
+    id: "string";
     sliderPosition?: number;
 }
 
@@ -13,6 +13,7 @@ interface IGroup {
     subtitle: string;
     content: IContent[];
     bgColor: TColor;
+    sectionId: "photography" | "video" | "design";
 }
 
 declare module "albums.json" {

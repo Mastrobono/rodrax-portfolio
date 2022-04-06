@@ -16,20 +16,23 @@ export interface IImagesQuery {
     edges: IEdgeImages[];
 }
 
+
 interface IEdgeData {
     node: INodeData;
 }
+
 
 export interface INodeData {
     bgColor: string;
     content: IContent[];
     subtitle: string;
     title: string;
+    sectionId: "photography" | "video" | "design";
 }
 
 export interface IContent {
     name: string;
-    path: string;
+    id: "string";
 }
 
 export interface IEdgeImages {
@@ -65,10 +68,11 @@ const Albums = () => {
                         edges {
                             node {
                             title,
-                            subtitle
+                            subtitle,
+                            sectionId
                             content {
                                 name
-                                path
+                                id
                             }
                             bgColor
                             }
